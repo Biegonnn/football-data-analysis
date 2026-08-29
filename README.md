@@ -1,87 +1,134 @@
 # ⚽ Football Match Analysis
 
-## Project Overview
+## 📌 Project Overview
 
-This project analyzes football match data using Python, Pandas, and Matplotlib.
+This project explores football match data using Python, Pandas, and Matplotlib.
 
-The purpose of the project is to explore football match results, team goal-scoring performance, home advantage, and goal-scoring patterns across different months.
+The analysis focuses on team goal-scoring performance, match outcomes, home advantage, and average goals across different months.
 
-## Dataset
+The goal of the project was to demonstrate a complete beginner Data Science workflow:
 
-The dataset contains football match information, including:
+**Data Collection → Data Cleaning → Exploratory Data Analysis → Data Visualization → Interpretation**
 
-* Match date
-* Home team
-* Away team
-* Home team goals
-* Away team goals
-* Full-time result
-* Other match statistics and betting information
+---
 
-The original dataset contained **7,404 rows and 104 columns**.
+## 📊 Dataset
 
-After cleaning, the dataset contained **7,403 matches and 70 columns**.
+The original dataset contained:
 
-## Data Cleaning
+* **7,404 matches**
+* **104 columns**
 
-The following cleaning steps were performed:
+After cleaning:
 
-1. Checked for duplicate rows.
-2. Found no duplicate rows.
-3. Removed one completely empty row.
-4. Removed 34 columns containing more than 80% missing values.
-5. Saved the cleaned data as `matches_clean.csv`.
+* **7,403 matches**
+* **70 columns**
 
-## Analysis Performed
+The dataset includes information such as match dates, home teams, away teams, goals scored, match results, and other football statistics.
+
+---
+
+## 🧹 Data Cleaning
+
+The following steps were performed:
+
+* Checked for duplicate records.
+* Found **0 duplicate rows**.
+* Removed **1 completely empty row**.
+* Removed **34 columns** containing more than 80% missing values.
+* Saved the cleaned dataset as `matches_clean.csv`.
+
+---
+
+## 📈 Analysis & Visualizations
 
 ### 1. Top 10 Teams by Total Goals
 
-Home and away goals were combined to calculate the total goals scored by each team.
+Home and away goals were combined to calculate each team's total goals across the dataset.
 
-Arsenal ranked first in the dataset, followed by Manchester United.
+**Arsenal ranked first, followed by Manchester United.**
+
+![Top 10 Teams by Total Goals](images/top_teams_goals.png)
+
+---
 
 ### 2. Home Advantage
 
-The match result column (`FTR`) was analyzed to compare home wins, away wins, and draws.
+The `FTR` column was used to compare home wins, away wins, and draws.
 
-Results:
+| Result   | Matches | Percentage |
+| -------- | ------: | ---------: |
+| Home Win |   3,428 |      46.3% |
+| Away Win |   2,111 |      28.5% |
+| Draw     |   1,864 |      25.2% |
 
-* Home wins: **3,428 (46.3%)**
-* Away wins: **2,111 (28.5%)**
-* Draws: **1,864 (25.2%)**
+![Home Wins vs Away Wins vs Draws](images/home_advantage_pie.png)
 
-The results suggest that home teams had a significant advantage in the matches analyzed.
+The results indicate that home teams won substantially more often than away teams in the matches analyzed.
+
+---
 
 ### 3. Average Goals by Month
 
-The match dates were converted into datetime values and the month was extracted.
+Match dates were converted into datetime values and the month was extracted.
 
-The total goals in each match were calculated using:
+Total goals were calculated as:
 
-`Home Goals + Away Goals`
+**Home Goals + Away Goals**
 
-The average number of goals was then calculated for each month.
+The monthly averages were then compared.
 
-The month with the highest average number of goals in this dataset was **July**, with **2.94 goals per match across 66 matches**.
+**July had the highest average at 2.94 goals per match across 66 matches.**
 
-## Visualizations
+![Average Goals per Match by Month](images/monthly_goals.png)
 
-The project produces three main visualizations:
+---
 
-1. Top 10 Teams by Total Goals
-2. Home Wins vs Away Wins vs Draws
-3. Average Goals per Match by Month
+## 🔍 Key Findings
 
-All visualizations are stored in the `images` folder.
+* 🥇 **Arsenal** ranked first in total goals.
+* 🥈 **Manchester United** ranked second.
+* 🏠 Home teams won **46.3%** of matches.
+* ✈️ Away teams won **28.5%** of matches.
+* 🤝 **25.2%** of matches ended in draws.
+* ⚽ **July** had the highest average goals per match at **2.94**.
 
-## Technologies Used
+---
+
+## 🛠️ Technologies Used
 
 * Python
 * Pandas
 * Matplotlib
 * VS Code
+* Git
+* GitHub
 
-## How to Run the Project
+---
+
+## 📁 Project Structure
+
+```text
+football-data-analysis/
+│
+├── data/
+│   ├── matches.csv
+│   └── matches_clean.csv
+│
+├── images/
+│   ├── home_advantage_pie.png
+│   ├── monthly_goals.png
+│   └── top_teams_goals.png
+│
+├── analysis.py
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+## ▶️ How to Run
 
 Install the required libraries:
 
@@ -89,26 +136,34 @@ Install the required libraries:
 pip3 install -r requirements.txt
 ```
 
-Then run:
+Run the analysis:
 
 ```bash
 python3 analysis.py
 ```
 
-## Key Findings
+The analysis generates three charts and saves them inside the `images` folder.
 
-The analysis shows that:
+---
 
-* Arsenal was the highest-scoring team in the dataset.
-* Manchester United ranked second in total goals.
-* Home teams won **46.3%** of the matches analyzed.
-* Away teams won **28.5%** of the matches analyzed.
-* July had the highest average goals per match at **2.94**.
+## 📚 What I Learned
 
-## Conclusion
+Through this project I practiced:
 
-This project demonstrates a basic Data Science workflow:
+* Loading CSV datasets with Pandas
+* Exploring data using DataFrames
+* Identifying missing values
+* Cleaning datasets
+* Grouping and aggregating data
+* Working with dates
+* Calculating averages and totals
+* Creating data visualizations
+* Using Git and GitHub for version control
 
-**Data Collection → Data Cleaning → Exploratory Data Analysis → Data Visualization → Interpretation**
+---
 
-The project was developed as a beginner Data Science project using real football match data.
+## 👤 Author
+
+**Biegonnn**
+
+This project was created as a beginner Data Science portfolio project.
